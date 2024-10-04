@@ -7,6 +7,18 @@
 
 #define DHT11_PIN 7
 
+int readDHT11(int fd, int *data) {
+    data[2] = wiringPiI2CReadReg8(fd, 0); 
+    data[3] = wiringPiI2CReadReg8(fd, 1);  
+
+    if (data[2] == -1 || data[3] == -1) {
+        return -1; 
+    }
+
+    return 0; 
+}
+
+
 int main() {
   wiringPiSetupGpio();
 
