@@ -7,6 +7,7 @@
 
 #define DHT11_PIN 7
 
+/* This Function */
 int readDHT11(int fd, int *data) {
     data[2] = wiringPiI2CReadReg8(fd, 0); 
     data[3] = wiringPiI2CReadReg8(fd, 1);  
@@ -28,6 +29,7 @@ int main() {
   mosquitto_lib_init();
   mosq = mosquitto_new("temperature_sensor", true, NULL);
   mosquitto_connect(mosq, "broker.hivemq.com", 1883, 60);
+  readDHT11(&data)
 
   while (1) {
     int data[5] = {0};
