@@ -29,7 +29,7 @@ int main() {
   mosquitto_lib_init();
   mosq = mosquitto_new("temperature_sensor", true, NULL);
   mosquitto_connect(mosq, "broker.hivemq.com", 1883, 60);
-  readDHT11(&data)
+  readDHT11(&data);
 
   while (1) {
     int data[5] = {0};
