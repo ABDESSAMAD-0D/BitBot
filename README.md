@@ -1,1 +1,1 @@
-All what you will find her is abot IoT projects
+All what you will find her is about IoT projects
