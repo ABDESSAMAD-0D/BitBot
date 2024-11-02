@@ -28,7 +28,7 @@ int main() {
   struct mosquitto *mosq;
   mosquitto_lib_init();
   mosq = mosquitto_new("temperature_sensor", true, NULL);
-  mosquitto_connect(mosq, "broker.hivemq.com", 1883, 60);
+  mosquitto_connect(mosq, "D_watter.hivemq.com", 1883, 60);
   readDHT11(&data);
 
   while (1) {
